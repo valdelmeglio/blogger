@@ -3,7 +3,8 @@
 from blogger.blog.models import Blog, Category
 from django.shortcuts import render_to_response, get_object_or_404
 from django.shortcuts import render
-
+from forms import PostForm
+from django.template import RequestContext
 
 def index(request):
     return render_to_response('index.html', {
@@ -24,4 +25,14 @@ def view_category(request, slug):
     })
     
 def view_form(request):
-	return render(request, 'view_form.html')
+    form = PostForm(request.POST or None)
+    if request.method == 'POST':
+        if form.is_valid():
+            post = form.save(commit=false)
+            post.save()
+            #return redirect(post) 
+            return render('index.html')
+
+    return render_to_response('view_form.html', 
+                              { 'form': form },
+                              context_instance=RequestContext(request))
