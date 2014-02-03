@@ -5,6 +5,7 @@ from django.shortcuts import render_to_response, get_object_or_404
 from django.shortcuts import render
 from forms import PostForm
 from django.template import RequestContext
+from django.http import HttpResponseRedirect
 
 def index(request):
     return render_to_response('index.html', {
@@ -23,16 +24,15 @@ def view_category(request, slug):
         'category': category,
         'posts': Blog.objects.filter(category=category)[:5]
     })
-    
+      
 def view_form(request):
     form = PostForm(request.POST or None)
-    if request.method == 'POST':
-        if form.is_valid():
-            post = form.save(commit=false)
-            post.save()
-            #return redirect(post) 
-            return render('index.html')
-
-    return render_to_response('view_form.html', 
-                              { 'form': form },
-                              context_instance=RequestContext(request))
+    if form.is_valid():
+        post = form.save(commit=False)
+        post.author = request.user
+        post.save()
+        return redirect(post)
+        
+    form = PostForm()
+    context = {'form': form}
+    return render(request,'view_form.html',context)
