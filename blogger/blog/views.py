@@ -31,7 +31,7 @@ def view_form(request):
         post = form.save(commit=False)
         post.author = request.user
         post.save()
-        return redirect(post)
+        return HttpResponseRedirect('view_form.html')
         
     form = PostForm()
     context = {'form': form}
