@@ -6,6 +6,7 @@ from django.shortcuts import render
 from forms import PostForm
 from django.template import RequestContext
 from django.http import HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
 
 def index(request):
     return render_to_response('index.html', {
@@ -24,14 +25,14 @@ def view_category(request, slug):
         'category': category,
         'posts': Blog.objects.filter(category=category)[:5]
     })
-      
+@login_required      
 def view_form(request):
     form = PostForm(request.POST or None)
     if form.is_valid():
         post = form.save(commit=False)
         post.author = request.user
         post.save()
-        return HttpResponseRedirect('view_form.html')
+        return HttpResponseRedirect('/')
         
     form = PostForm()
     context = {'form': form}
