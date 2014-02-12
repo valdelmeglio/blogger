@@ -163,4 +163,4 @@ LOGGING = {
 
 LOGIN_URL = '/login/'
 
-LOGIN_REDIRECT_URL = '/view_form/'
+LOGIN_REDIRECT_URL = '/view_form'
