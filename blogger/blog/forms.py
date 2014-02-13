@@ -9,3 +9,12 @@ from models import Blog
 class PostForm(forms.ModelForm):
     class Meta:
         model = Blog
+        fields = ['title', 'body', 'category']
+ 
+    def clean(self):
+        cleaned_data = self.cleaned_data
+
+        if self._errors and 'category' in self._errors:
+            raise forms.ValidationError("You call that a title?!")
+        else:
+            return cleaned_data  
