@@ -6,7 +6,7 @@
     {{ post.body }}
        {% if user.is_authenticated %}
             <p>
-                <a href="{{ post.id }}/edit" class="btn btn-primary btn-xs">Edit</a>
+                <a href="{{ post.id }}/edit.html" class="btn btn-primary btn-xs">Edit</a>
                 <a href="#" class="btn btn-primary btn-xs" id="deleteButton" data-toggle="modal" data-target="#deletePostModal">Delete</a>
 
                 <div class="modal fade" id="deletePostModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

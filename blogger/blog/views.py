@@ -13,12 +13,7 @@ def index(request):
         'categories': Category.objects.all(),
         'posts': Blog.objects.all()
     })
-'''
-def view_post(request, slug):   
-    return render_to_response('view_post.html', {
-        'post': get_object_or_404(Blog, slug=slug)
-    })
-'''
+
 def view_post(request, id):
     post = Blog.objects.get(id = int(id))
     context = {'post': post}
@@ -46,3 +41,10 @@ def view_form(request):
     return render_to_response('view_form.html', 
                               { 'form': form },
                               context_instance=RequestContext(request))
+                              
+@login_required
+def edit_post(request, id):
+    '''
+    To implement: edit post management
+    '''
+    return HttpResponseRedirect('/')                     
