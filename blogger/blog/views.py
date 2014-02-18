@@ -23,7 +23,7 @@ def view_post(request, id):
     post = Blog.objects.get(id = int(id))
     context = {'post': post}
     #return render(request, 'view_post.html', context)
-    return render_to_response('view_post.html', {'post': post}) 
+    return render_to_response('view_post.html', {'post': post}, context_instance=RequestContext(request)) 
        
 def view_category(request, slug):
     category = get_object_or_404(Category, slug=slug)
