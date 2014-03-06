@@ -1,4 +1,5 @@
 # Django settings for blogger project.
+import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
