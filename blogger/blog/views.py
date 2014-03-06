@@ -44,11 +44,17 @@ def view_form(request):
                               
 @login_required
 def edit_post(request, id):
-    post = get_object_or_404(Blog, pk=id)
-    form = PostForm(instance=post)
-    context = {'form': form, 'post': post}
-    #return render(request, 'view_form.html', context)
-    return render_to_response('view_form.html', 
+    if request.POST:
+        post = get_object_or_404(Blog, pk=id)
+        form = PostForm(request.POST, instance=post)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/') 
+    else: 
+        post = get_object_or_404(Blog, pk=id)
+        form = PostForm(instance=post)
+        context = {'form': form, 'post': post}
+        #return render(request, 'view_form.html', context)
+        return render_to_response('view_form.html', 
                              {'form': form, 'post': post},
-                              context_instance=RequestContext(request))    
-    #return HttpResponseRedirect('/')                     
+                              context_instance=RequestContext(request))                        
