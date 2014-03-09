@@ -57,4 +57,15 @@ def edit_post(request, id):
         #return render(request, 'view_form.html', context)
         return render_to_response('view_form.html', 
                              {'form': form, 'post': post},
-                              context_instance=RequestContext(request))                        
+                              context_instance=RequestContext(request))    
+                              
+@login_required
+def delete_post(request, id):
+    # to improve
+    post = Blog.objects.get(id = int(id)) 
+    post.delete()  
+    return HttpResponseRedirect('/') 
+
+
+
+                                                  

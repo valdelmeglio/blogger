@@ -7,7 +7,7 @@
        {% if user.is_authenticated %}
             <p>
                 <a href="{{ post.id }}/edit.html" class="btn btn-primary btn-xs">Edit</a>
-                <a href="#" class="btn btn-primary btn-xs" id="deleteButton" data-toggle="modal" data-target="#deletePostModal">Delete</a>
+                <a href="{{ post.id }}/delete" class="btn btn-primary btn-xs" id="deleteButton" data-toggle="modal" data-target="#deletePostModal">Delete</a>
 
                 <div class="modal fade" id="deletePostModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
@@ -21,7 +21,7 @@
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <a href="/blog/{{ post.id }}/delete" class="btn btn-primary" id="deleteButton">Delete</a>
+                        <a href="{{ post.id }}/delete.html" class="btn btn-primary" id="deleteButton">Delete</a>
                       </div>
                     </div><!-- /.modal-content -->
                   </div><!-- /.modal-dialog -->
