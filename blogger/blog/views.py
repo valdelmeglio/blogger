@@ -1,9 +1,9 @@
 # Create your views here.
 
-from blogger.blog.models import Blog, Category
+from blogger.blog.models import Blog, Category, BlogComment
 from django.shortcuts import render_to_response, get_object_or_404
 from django.shortcuts import render
-from forms import PostForm
+from forms import PostForm, CommentForm
 from django.template import RequestContext
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
@@ -16,9 +16,10 @@ def index(request):
 
 def view_post(request, id):
     post = Blog.objects.get(id = int(id))
-    context = {'post': post}
+    comments = BlogComment.objects.filter(post = post)
+    context = {'post': post, 'comments': comments, 'form': CommentForm()}
     #return render(request, 'view_post.html', context)
-    return render_to_response('view_post.html', {'post': post}, context_instance=RequestContext(request)) 
+    return render(request, 'view_post.html', context) 
        
 def view_category(request, slug):
     category = get_object_or_404(Category, slug=slug)
@@ -66,6 +67,16 @@ def delete_post(request, id):
     post.delete()  
     return HttpResponseRedirect('/') 
 
+
+def add_comment(request, id):
+    form = CommentForm(request.POST)
+    
+    if form.is_valid():
+        post = Blog.objects.get(id=id)
+
+        form.save(post = post)
+
+        return HttpResponseRedirect('/')
 
 
                                                   

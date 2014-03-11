@@ -27,3 +27,12 @@ class Category(models.Model):
     @permalink
     def get_absolute_url(self):
         return ('view_blog_category', None, { 'slug': self.slug })
+        
+        
+class BlogComment(models.Model):
+    post = models.ForeignKey(Blog)
+    text = models.TextField()
+    date = models.DateTimeField(auto_now_add = True)
+
+    def __unicode__(self):
+        return unicode("%s: %s" % (self.post, self.text[:60]))        

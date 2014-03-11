@@ -29,5 +29,25 @@
             </p>
         {% endif %}    
     
-    
+  
+  <!-- Comment form -->
+<div class="well">
+    <h4>Leave a Comment:</h4>
+    <form role="form" action="{% url 'blogger.blog.views.add_comment' post.id %}" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <textarea class="form-control" rows="3" id="id_text" name="text"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<!-- Comments -->
+{% if comments %}
+    {% for comment in comments %}
+        <h3><small><span class="glyphicon glyphicon-time"></span> {{ comment.date }}</small></h3>
+        <p>{{ comment.text }}</p>
+    {% endfor %}
+{% endif %}
+  
 {% endblock %}

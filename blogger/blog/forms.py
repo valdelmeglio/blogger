@@ -1,5 +1,5 @@
 from django import forms
-from models import Blog
+from models import Blog, BlogComment
 
 #class postForm(forms.Form):  
     #title = forms.CharField(max_length=100, unique=True)
@@ -18,3 +18,16 @@ class PostForm(forms.ModelForm):
             raise forms.ValidationError("You call that a title?!")
         else:
             return cleaned_data  
+            
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = BlogComment
+        exclude = ('post',)
+
+    def save(self, post, commit=True):
+        comment = super(CommentForm, self).save(commit=False)
+        comment.post = post
+
+        if commit:
+            comment.save()
+        return comment            

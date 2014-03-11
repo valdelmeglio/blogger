@@ -14,6 +14,7 @@ url(r'^(?P<id>[^\.]+)/edit.html', 'blogger.blog.views.edit_post', name='view_edi
 url(r'^(?P<id>[^\.]+)/delete.html', 'blogger.blog.views.delete_post', name='view_delete_post'),
 url(r'^(?P<id>[^\.]+).html', 'blogger.blog.views.view_post', name='view_blog_post'),
 url(r'^(?P<slug>[^\.]+).html', 'blogger.blog.views.view_category', name='view_blog_category'),
+url(r'^add_comment/(\d+)/$', 'blogger.blog.views.add_comment', name="view_add_comment"),
 
 
 )
