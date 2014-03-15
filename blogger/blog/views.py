@@ -38,7 +38,6 @@ def view_form(request):
         return HttpResponseRedirect('/')
     
     context = {'form': form}
-    #return render(request,'view_form.html/',context)
     return render_to_response('view_form.html', 
                               { 'form': form },
                               context_instance=RequestContext(request))
@@ -73,9 +72,7 @@ def add_comment(request, id):
     
     if form.is_valid():
         post = Blog.objects.get(id=id)
-
         form.save(post = post)
-
         return HttpResponseRedirect('/')
 
 
