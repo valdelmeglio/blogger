@@ -75,5 +75,10 @@ def add_comment(request, id):
         form.save(post = post)
         return HttpResponseRedirect('/')
 
-
+@login_required
+def delete_comment(request, id):
+    # to improve
+    postComment = BlogComment.objects.get(id = int(id)) 
+    postComment.delete()  
+    return HttpResponseRedirect('/') 
                                                   

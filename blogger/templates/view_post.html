@@ -47,6 +47,7 @@
     {% for comment in comments %}
         <h3><small><span class="glyphicon glyphicon-time"></span> {{ comment.date }}</small></h3>
         <p>{{ comment.text }}</p>
+        <a href="{{ comment.id }}/delete_comment.html" class="btn btn-primary" id="deleteButton">Delete</a>
     {% endfor %}
 {% endif %}
   
