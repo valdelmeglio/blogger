@@ -126,7 +126,8 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blogger.blog'
+    'blogger.blog',
+    'djcelery'
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
@@ -165,3 +166,5 @@ LOGGING = {
 LOGIN_URL = '/login'
 
 LOGIN_REDIRECT_URL = '/view_form'
+
+CELERY_RESULT_BACKEND='djcelery.backends.database:DatabaseBackend'
