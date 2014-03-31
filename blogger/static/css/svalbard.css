@@ -1,0 +1,296 @@
+/* ==========================================================================
+Svalbard v1.0
+Copyright 2012 Philippe Dionne
+========================================================================== */
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+.hide-text {
+  font: a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small {
+  color: #3b3f46;
+}
+a:hover {
+  text-decoration: none;
+}
+blockquote {
+  border-left: 5px solid #3b3f46;
+}
+blockquote p {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-bottom: 10px;
+}
+blockquote small {
+  color: #3b3f46;
+  font-weight: bold;
+}
+hr.thick {
+  border-top-width: 3px;
+}
+.page-header {
+  border-bottom: 3px solid #3b3f46;
+}
+.form-actions {
+  border-top: 1px solid #e83d24;
+}
+.breadcrumb {
+  background-color: #ef7a69;
+}
+.breadcrumb li {
+  text-shadow: none;
+}
+.breadcrumb .active {
+  color: #3b3f46;
+}
+.breadcrumb .divider {
+  color: #e83d24;
+}
+.pager a,
+.pager span {
+  background-color: #ef7a69;
+  border: 1px solid #e83d24;
+}
+.thumbnail {
+  border: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+a.thumbnail:hover {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.carousel {
+  margin-bottom: 0;
+}
+/* General
+   ========================================================================== */
+p {
+  font-family: 'Lekton', sans-serif;
+  font-weight: 400;
+}
+hr {
+  border-bottom: none;
+}
+legend {
+  border-bottom: 1px solid #3b3f46;
+}
+.text-align-center {
+  text-align: center;
+}
+.text-align-right {
+  text-align: right;
+}
+.text-align-left {
+  text-align: left;
+}
+.inline li {
+  display: inline;
+  margin-right: 7px;
+}
+.brand a {
+  color: #3b3f46;
+}
+/* Scaffolding
+   ========================================================================== */
+.content {
+  margin: 0 -20px;
+  padding: 20px;
+  background-color: #ed6652;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.columns2 {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  -webkit-column-gap: 20px;
+  -moz-column-gap: 20px;
+  column-gap: 20px;
+}
+.columns3 {
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+  -webkit-column-gap: 20px;
+  -moz-column-gap: 20px;
+  column-gap: 20px;
+}
+.columns4 {
+  -webkit-column-count: 4;
+  -moz-column-count: 4;
+  column-count: 4;
+  -webkit-column-gap: 20px;
+  -moz-column-gap: 20px;
+  column-gap: 20px;
+}
+/* Header
+   ========================================================================== */
+#banner-primary {
+  margin-top: 40px;
+}
+#banner-primary ul {
+  margin: 0;
+}
+/* Frontpage
+   ========================================================================== */
+#carousel {
+  overflow: hidden;
+  margin: 0;
+  padding-top: 20px;
+}
+#carousel .item h1 {
+  font-size: 56px;
+  line-height: 60px;
+}
+#carousel .item .icon {
+  height: 200px;
+  -webkit-background-size: 200px;
+  -moz-background-size: 200px;
+  -o-background-size: 200px;
+  background-size: 200px;
+}
+#carousel #carousel-nav {
+  position: relative;
+  height: 40px;
+}
+#carousel #carousel-nav .carousel-control {
+  width: 20px;
+  height: 20px;
+  margin-top: 0;
+  font-size: 30px;
+  line-height: 15px;
+  opacity: 1;
+  filter: alpha(opacity=100);
+  background: #3b3f46;
+  border: 1px solid #000000;
+}
+#carousel #carousel-nav .carousel-control.left {
+  left: auto;
+  right: 60px;
+}
+#carousel #carousel-nav .carousel-control:hover {
+  color: #ffffff;
+  background: #555555;
+  text-decoration: none;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+#latest article .entry-title {
+  margin-top: 0;
+}
+/* Article
+   ========================================================================== */
+article .author {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+article time.updated {
+  font-weight: bold;
+}
+/* Footer
+   ========================================================================== */
+#content-info #twitter #tweets .meta {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 12px;
+}
+#content-info #twitter #tweets p {
+  margin: 0;
+}
+#content-info #colophon p {
+  margin-bottom: 0;
+}
+/* Responsive
+   ========================================================================== */
+/* Large desktop */
+@media (min-width: 1200px) {
+  
+}
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+  
+}
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+  .columns2 {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+    -webkit-column-gap: 20px;
+    -moz-column-gap: 20px;
+    column-gap: 20px;
+  }
+  .columns3 {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+    -webkit-column-gap: 20px;
+    -moz-column-gap: 20px;
+    column-gap: 20px;
+  }
+  .columns4 {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+    -webkit-column-gap: 20px;
+    -moz-column-gap: 20px;
+    column-gap: 20px;
+  }
+  #colophon .pull-right {
+    float: none;
+    font-weight: 700;
+  }
+}
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  #content-info .brand {
+    text-align: center;
+  }
+}
+/* ==========================================================================
+   Icons
+   ========================================================================== */
+.slider-icon {
+  display: block;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 200px;
+}
+.slider-icon-document {
+  background-image: url('../img/icons/icon-document.svg');
+}
+.slider-icon-timer {
+  background-image: url('../img/icons/icon-timer.svg');
+}
+.slider-icon-deviation {
+  background-image: url('../img/icons/icon-deviation.svg');
+}

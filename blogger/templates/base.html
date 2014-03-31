@@ -1,83 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load staticfiles %}
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+	<meta charset="utf-8">
+	<title>Blogger</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Blogger: a Django blog">
+	<meta name="author" content="Valerio Del Meglio">
 
-    <title>Blogger</title>
+	<link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+	<link href="{% static "css/bootstrap-responsive.css" %}" rel="stylesheet">
+	<link href="{% static "css/svalbard.css" %}" rel="stylesheet">
 
-    <!-- Bootstrap core CSS -->
-    <link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Lekton:400,700' rel='stylesheet' type='text/css'>
 
+	<!--[if lt IE 9]>
+	<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
 
-    <!-- Add custom CSS here -->
-    <style>
-    body {
-        margin-top: 60px;
-    }
-    </style>
-
+	<link rel="shortcut icon" href="{% static "ico/favicon.html" %}">
+	<link rel="apple-touch-icon" href="{% static "ico/apple-touch-icon.html" %}">
+	<link rel="apple-touch-icon" sizes="72x72" href="{% static "ico/apple-touch-icon-72x72.html" %}">
+	<link rel="apple-touch-icon" sizes="114x114" href="{% static "ico/apple-touch-icon-114x114.html" %}">
 </head>
 
 <body>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/">Blogger</a>
-            </div>
+	<div class="container">
+	<header class="content" id="banner-primary" role="banner">
+		<div class="row">
+			<div class="span4">
+				<h1 class="brand"><a href="/">Blogger</a></h1>
+			</div>
+			<!--
+			<div class="span2">
+				<h4>Projects</h4>
+				<ul class="unstyled">
+					<li><a href="page.html">Page</a></li>
+					<li><a href="page-full.html">Page full width</a></li>
+				</ul>
+			</div>
+			
+			<div class="span2">
+				<h4>Services</h4>
+				<ul class="unstyled">
+					<li><a href="page-elements.html">Components</a></li>
+					<li><a href="gallery.html">Gallery</a></li>
+				</ul>
+			</div>
+			
+			<div class="span2">
+				<h4>Blog</h4>
+				<ul class="unstyled">
+					<li><a href="single-2columns.html">Article 2 columns</a></li>
+					<li><a href="single.html">Article 3 columns</a></li>
+				</ul>
+			</div>
+			-->
+			<div class="span2">
+				<h4>Blog</h4>
+				<ul class="unstyled">
+					<li><a href="/view_form.html">Post</a></li>
+					<li><a href="services.html">Categories</a></li>
+				</ul>
+			</div>
+		</div><!-- /.row -->
+	</header>
+</div> <!-- /container -->
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="#about">About</a>
-                    </li>
-                    <li><a href="#services">Services</a>
-                    </li>
-                    <li><a href="/view_form.html">Post</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
 
-    <div class="container">
+	<hr class="invisible">
 
-        <div class="row">
-            <div align="center" class="col-lg-12">
- 
-         <h1>{% block title %}Welcome to my block{% endblock %}</h1>
+	<div class="container">
+		<div class="content">
+			<section class="hentry">
+	<div class="row">
+		<div class="span12">
+			<div class="page-header">
+				<h1>Page title</h1>
+			</div>
         {% autoescape off %}
         {% block content %}
 
         {% endblock %}
         {% endautoescape %}
-            </div>
-        </div>
+		</div>
+	</div>
+</section>
 
 
+		</div><!-- /.content -->
+	</div> <!-- /.container -->
 
-    </div>
-    
+	<hr class="invisible">
 
-    <!-- /.container -->
+<div class="container">
+	<footer class="content" id="content-info" role="contentinfo">
+		<hr class="thick">
+		<div class="row">
+			<div class="span4" id="about">
+				<h4>About</h4>
+				<p>Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id.</p>
+			</div>
+			<hr class="visible-phone">
+			<div class="span3" id="twitter">
+				<h4>Twitter</h4>
+				<div id="tweets"></div><!-- chirp.js -->
+			</div>
+			<div class="span4 offset1 text-align-right">
+				<h2 class="brand"><a href="index.html">Blogger</a></h2>
+			</div>
+		</div><!-- /.row -->
+		<hr>
+		<div class="row">
+			<div class="span12" id="colophon">
+				<p class="pull-right"> <a href="http://www.github.com/valdelmeglio/blogger" > <img src="{% static "ico/GitHub-Mark.png" %}"> </a> </p>
+				<p>© 2014 Valerio Del Meglio / Made in Italy </p>
+			</div>
+		</div><!-- /.row -->
+	</footer>
+</div> <!-- /container -->
 
-    <!-- JavaScript -->
-    <script src="{% static "js/jquery-1.10.2.js" %}"></script>
-    <script src="{% static "js/bootstrap.js" %}"></script>
+<hr class="invisible">
 
 
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="{% static "js/bootstrap.min.js" %}"></script>
+	<script>
+	$(function() {
+		$('.carousel').carousel({
+			interval: 8000
+		})
+	});
+	</script>
+	<script src="{% static "js/chirp.min.js" %}"></script>
+	<script>Chirp({
+		user: 'losaifate',			//Twitter username
+		max: 2,						//Maximum number of tweets to show 
+		count: 10,					//Total tweets to retrieve
+		retweets: true,				//Show/Don't show retweets
+		replies: false,				//Show/Don't show replies
+		cacheExpire: 1000 * 60 * 2,	//Number of milliseconds to cache tweets
+		target: 'tweets'
+	})</script>
 
 
 </body>

@@ -10,10 +10,12 @@
 
 <!-- New BlogPost form-->
 <div class="well">
+<center>
     <form role="form" action="" method="POST">{% csrf_token %}
 {{ form.as_p }}
 <input type="submit" value="Submit" />
 </form>
+</center>
 </div>
 
 {% endblock %}

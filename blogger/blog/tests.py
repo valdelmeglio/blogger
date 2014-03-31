@@ -23,7 +23,8 @@ class BlogPostFactory(object):
             blogpost.save()
 
         return blogpost
- '''       
+ '''   
+    
 class CategoryFactory(object):
     def create(self, save=False):
         category = Category()
@@ -34,7 +35,7 @@ class CategoryFactory(object):
             category.save()
 
         return category
-        
+       
                 
             
 class BlogTest(TestCase):
@@ -48,3 +49,6 @@ class BlogTest(TestCase):
     def test_category_creation(self):
         category = CategoryFactory().create(True)
         self.assertTrue(category.id > 0, "Category created correctly")
+        
+        
+        

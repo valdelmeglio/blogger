@@ -15,15 +15,14 @@
 
     <h2>Posts</h2>
 {% if posts %}
-    {% for post in posts %}
-    <div class="row">
-        <div class="col-md-12">
+    {% for post in posts %}   
+
             <a class="lead" href="{{ post.id }}.html">{{ post.title }}</a>
             <p>
             <p><small>{{ post.body }}</small></p>
+            <i class="icon-bookmark"></i>Category: {{post.category}}
             <p><span class="glyphicon glyphicon-time"></span> Posted on {{ post.posted }}</p>
-        </div>
-    </div>
+          
     {% endfor %}
 {% else %}
     <p>No Blog posts are available.</p>
