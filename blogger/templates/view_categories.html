@@ -1,0 +1,14 @@
+{% extends 'base.html' %} 
+{% block head_title %}Viewing categories {{ category.title }}{% endblock %}
+
+{% block content %}
+    {% if categories %}
+        <ul>
+        {% for category in categories %}
+            <li>{{ category.title }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>There are no categories.</p>
+    {% endif %}
+{% endblock %}

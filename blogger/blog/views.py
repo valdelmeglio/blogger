@@ -81,4 +81,8 @@ def delete_comment(request, id):
     postComment = BlogComment.objects.get(id = int(id)) 
     postComment.delete()  
     return HttpResponseRedirect('/') 
-                                                  
+    
+def view_categories(request):
+    return render_to_response('view_categories.html', {
+        'categories': Category.objects.all()
+    })
