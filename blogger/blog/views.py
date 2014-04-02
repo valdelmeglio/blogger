@@ -7,11 +7,20 @@ from forms import PostForm, CommentForm
 from django.template import RequestContext
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
+# twitter APIs
+import twitter
+from twitter_api_keys import *
 
 def index(request):
+    api = twitter.Api(consumer_key=twitter_consumer_key,
+                      consumer_secret=twitter_consumer_secret,
+                      access_token_key=twitter_access_token_key,
+                      access_token_secret=twitter_access_token_secret)
+    statuses = api.GetUserTimeline('djangoproject')             
     return render_to_response('index.html', {
         'categories': Category.objects.all(),
-        'posts': Blog.objects.all()
+        'posts': Blog.objects.all(),
+        'statuses': statuses
     })
 
 def view_post(request, id):

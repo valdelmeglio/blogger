@@ -5,17 +5,17 @@
 
 
 {% block content %}
-<br>
-<br>
 
 <!-- New BlogPost form-->
+<br>
+<br>
 <div class="well">
 <center>
     <form role="form" action="" method="POST">{% csrf_token %}
-{{ form.as_p }}
+{{ form.as_p}}
 <input type="submit" value="Submit" />
 </form>
 </center>
 </div>
-
 {% endblock %}
+

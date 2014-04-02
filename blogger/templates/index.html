@@ -10,7 +10,10 @@
             <a class="lead" href="{{ post.id }}.html">{{ post.title }}</a>
             <p>
             <p><small>{{ post.body }}</small></p>
-            <i class="icon-bookmark"></i>Category: {{post.category}}
+         <div style="float:right";>   <a href="https://twitter.com/share" class="twitter-share-button" data-via="Losaifate">Tweet</a>
+         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+         </div>
+           <div style="float:right";>  <i class="icon-bookmark"></i>Category: {{post.category}} </div>
             <p><span class="glyphicon glyphicon-time"></span> Posted on {{ post.posted }}</p>
           
     {% endfor %}
