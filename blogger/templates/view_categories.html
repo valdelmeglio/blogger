@@ -5,10 +5,13 @@
     {% if categories %}
         <ul>
         {% for category in categories %}
-            <li>{{ category.title }}</li>
+            <li><a href="category/{{ category.title }}.html">{{ category.title }}</a></li>
         {% endfor %}
         </ul>
     {% else %}
         <p>There are no categories.</p>
     {% endif %}
+    {% if user.is_authenticated %}
+       <a href="new_category.html" class="btn btn-primary btn-xs">New category</a>
+    {% endif %} 
 {% endblock %}

@@ -1,5 +1,5 @@
 from django import forms
-from models import Blog, BlogComment
+from models import Blog, BlogComment, Category
 
 class PostForm(forms.ModelForm):
     class Meta:
@@ -26,3 +26,9 @@ class CommentForm(forms.ModelForm):
         if commit:
             comment.save()
         return comment            
+        
+        
+class NewCategory(forms.ModelForm):
+    class Meta: 
+        model = Category
+        fields =['title', 'slug']        
