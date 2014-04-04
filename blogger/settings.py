@@ -168,3 +168,15 @@ LOGIN_URL = '/login'
 LOGIN_REDIRECT_URL = '/view_form'
 
 CELERY_RESULT_BACKEND='djcelery.backends.database:DatabaseBackend'
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "blogger.blog.context_processors.twitter_stream",
+    "django.contrib.auth.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.static",
+    "django.contrib.messages.context_processors.messages",
+    "django.core.context_processors.request",
+    )
+
