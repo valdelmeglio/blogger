@@ -7,5 +7,5 @@ def twitter_stream(request):
                       consumer_secret=twitter_consumer_secret,
                       access_token_key=twitter_access_token_key,
                       access_token_secret=twitter_access_token_secret)
-    statuses = api.GetUserTimeline('djangoproject')             
+    statuses = api.GetUserTimeline('djangoproject')[:3]             
     return {'statuses': statuses}

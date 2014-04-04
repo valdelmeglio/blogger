@@ -12,16 +12,10 @@ import twitter
 from twitter_api_keys import *
 
 def index(request):
-    api = twitter.Api(consumer_key=twitter_consumer_key,
-                      consumer_secret=twitter_consumer_secret,
-                      access_token_key=twitter_access_token_key,
-                      access_token_secret=twitter_access_token_secret)
-    statuses = api.GetUserTimeline('djangoproject')             
     return render_to_response('index.html', {
         'categories': Category.objects.all(),
-        'posts': Blog.objects.all(),
-        'statuses': statuses
-    })
+        'posts': Blog.objects.all()},
+        context_instance=RequestContext(request))
 
 def view_post(request, id):
     post = Blog.objects.get(id = int(id))
