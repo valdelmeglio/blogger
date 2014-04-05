@@ -3,7 +3,7 @@
 {% block title %}{{ post.title }}{% endblock %}
 
 {% block content %}
-    {{ post.body }}
+    <p>{{ post.body }} </p>
        {% if user.is_authenticated %}
             <p>
                 <a href="{{ post.id }}/edit.html" class="btn btn-primary btn-xs">Edit</a>
